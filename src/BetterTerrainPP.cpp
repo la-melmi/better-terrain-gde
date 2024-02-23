@@ -490,6 +490,8 @@ void BetterTerrainPP::update_tile_immediate(int layer, godot::Vector2i coord, co
 
   if (placement)
     m_tilemap->set_cell(layer, coord, placement->source_id, placement->coord, placement->alternative);
+  else
+    m_tilemap->erase_cell(layer, coord);
 }
 
 const BetterTerrainPP::Placement* BetterTerrainPP::update_tile_tiles(godot::Vector2i coord, const std::map<godot::Vector2i, int>& types, bool apply_empty_probability) const
