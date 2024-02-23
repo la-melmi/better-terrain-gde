@@ -515,7 +515,7 @@ const BetterTerrainPP::Placement* BetterTerrainPP::update_tile_tiles(godot::Vect
         score -= 10;
     }
 
-    if (score > best_score)
+    if (score > best_score && score >= 0)
     {
       best_score = score;
       best = {&p};
@@ -552,7 +552,7 @@ const BetterTerrainPP::Placement* BetterTerrainPP::update_tile_vertices(godot::V
         score -= 10;
     }
 
-    if (score > best_score)
+    if (score > best_score && score >= 0)
     {
       best_score = score;
       best = {&p};
